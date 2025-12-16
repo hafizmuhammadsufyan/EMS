@@ -2,8 +2,6 @@ import React from 'react'
 
 const Profile = ({data}) => {
 
-    console.log(data);
-    
     return (
         <div className='flex gap-3 items-center'>
             <div className='bg-white text-amber-500 p-7 rounded-full text-3xl ml h-12 w-12 flex items-center justify-center'>

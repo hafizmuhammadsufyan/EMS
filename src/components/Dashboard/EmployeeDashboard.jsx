@@ -7,7 +7,7 @@ const EmployeeDashboard = ({logoutHandler, data}) => {
   return (
     <div>
         <Header logoutHandler={logoutHandler} data={data}/>
-        <EmployeeTaskDetail/>
+        <EmployeeTaskDetail data={data}/>
     </div>
   )
 }

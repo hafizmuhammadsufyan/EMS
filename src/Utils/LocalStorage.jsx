@@ -1,6 +1,7 @@
 const employee = [
   {
     id: 1,
+    name: "Ali",
     email: "employee1@company.com",
     password: "123",
     tasks: [
@@ -39,6 +40,7 @@ const employee = [
 
   {
     id: 2,
+    name: "Sahil",
     email: "employee2@company.com",
     password: "123",
     tasks: [
@@ -77,6 +79,7 @@ const employee = [
 
   {
     id: 3,
+    name: "Subhan",
     email: "employee3@company.com",
     password: "123",
     tasks: [
@@ -115,6 +118,7 @@ const employee = [
 
   {
     id: 4,
+    name: "Hammad",
     email: "employee4@company.com",
     password: "123",
     tasks: [
@@ -153,6 +157,7 @@ const employee = [
 
   {
     id: 5,
+    name: "Raheel",
     email: "employee5@company.com",
     password: "123",
     tasks: [
@@ -194,6 +199,7 @@ const employee = [
 const admin = [
   {
     id: 100,
+    name: "Sufyan",
     email: "admin@company.com",
     password: "123"
   }

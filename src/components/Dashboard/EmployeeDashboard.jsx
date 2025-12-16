@@ -2,10 +2,11 @@ import React from 'react'
 import Header from '../Others/Header/Header'
 import EmployeeTaskDetail from '../Others/EmployeeDashboardComponents/EmployeeTaskDetail'
 
-const EmployeeDashboard = () => {
+const EmployeeDashboard = ({logoutHandler, data}) => {
+
   return (
     <div>
-        <Header/>
+        <Header logoutHandler={logoutHandler} data={data}/>
         <EmployeeTaskDetail/>
     </div>
   )

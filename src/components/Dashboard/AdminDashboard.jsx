@@ -1,13 +1,13 @@
 import React from 'react'
 import Header from '../Others/Header/Header'
 
-const AdminDashboard = () => {
+const AdminDashboard = ({logoutHandler, data}) => {
     return (
         <div>
-            <Header />
-            <div className='w-screen flex gap-4 py-2 px-6'>
-                <div className='w-[50%]'>
-                    <form className='flex py-4 px-6 shadow-[0px_10px_12px_gray] rounded-2xl items-start justify-between border-t-2 border-amber-500'>
+            <Header logoutHandler={logoutHandler} data={data}/>
+            <div className='w-full flex-wrap items-center justify-center flex gap-4 py-2 px-6'>
+                <div className='w-[49%] shrink-0'>
+                    <form className='flex gap-4 flex-wrap py-4 px-6 shadow-[0px_10px_12px_gray] rounded-2xl items-start justify-between border-t-2 border-amber-500'>
                         <div className='flex flex-col gap-3'>
                             <h3>Task Title</h3>
                             <input className='border outline-none border-amber-500 rounded py-1 px-3' type="text" placeholder='e.g: Make UI Design' />
@@ -25,7 +25,7 @@ const AdminDashboard = () => {
                         </div>
                     </form>
                 </div>
-                <div className='w-[50%]'>
+                <div className='w-[49%] shrink-0'>
                     <form className='py-4 px-6 shadow-[0px_10px_12px_gray] rounded-2xl border-t-2 border-amber-500'>
                         <div className='flex flex-col gap-3'>
                             <h3>Employee Name</h3>

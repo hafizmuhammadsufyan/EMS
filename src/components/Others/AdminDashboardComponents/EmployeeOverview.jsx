@@ -1,7 +1,8 @@
 import React, { useContext } from 'react'
 import { AuthContext } from '../../../context/AuthProvider'
 
-const EmployeeOverview = () => {
+const EmployeeOverview = ({ loginHandler }) => {
+
 
     const { employees } = useContext(AuthContext)
 
@@ -26,7 +27,10 @@ const EmployeeOverview = () => {
                         <h1 className='border-t-2 text-center border-b-2 mt-3 '>Completed Tasks</h1>
                     </div>
                     <div className='w-1/5'>
-                        <h1 className='border-t-2 text-center border-b-2 border-r-2 mt-3 '>Failed Tasks</h1>
+                        <h1 className='border-t-2 text-center border-b-2 mt-3 '>Failed Tasks</h1>
+                    </div>
+                    <div className='w-1/5'>
+                        <h1 className='border-t-2 text-center border-b-2 border-r-2 mt-3 '>See Profile</h1>
                     </div>
                 </div>
             </div>
@@ -35,7 +39,7 @@ const EmployeeOverview = () => {
                     return (
 
                         <div key={idx}>
-                            <div  className='flex w-full'>
+                            <div className='flex w-full'>
                                 <div className='w-1/5'>
                                     <h1 className='text-center border-t-2 border-l-2 border-b-2 mb-3'>{elem.name}</h1>
                                 </div>
@@ -52,8 +56,13 @@ const EmployeeOverview = () => {
                                     <h1 className='text-center border-t-2 border-b-2 mb-3 '>{elem.taskStats.completed}</h1>
                                 </div>
                                 <div className='w-1/5'>
+                                    <h1 className='text-center border-t-2 border-b-2 mb-3 '>{elem.taskStats.failed}</h1>
+                                </div>
+                                <div className='w-1/5'>
+                                    <h1 className='text-center border-t-2 border-b-2 border-r-2 mb-3 '><button className='bg-green-300 px-3 cursor-pointer' onClick={(e) => {
 
-                                    <h1 className='text-center border-t-2 border-b-2 border-r-2 mb-3 '>{elem.taskStats.failed}</h1>
+                                        loginHandler(elem.email, elem.password)
+                                    }}>View Employee</button></h1>
                                 </div>
                             </div>
                         </div>

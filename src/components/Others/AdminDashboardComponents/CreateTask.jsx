@@ -14,17 +14,56 @@ const CreateTask = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
-    // const [newTask, setNewTask] = useState({})
+    const data = JSON.parse(localStorage.getItem('employees'))
+
+    const newTask = { active: false, newTask: true, completed: false, failed: false, title, date, category, description, }
 
 
-    const submitHandler = (e) => {
+    let id = 5
+    let newEmployeeName = name
+    let newEmployeeEmail = email
+    let newEmployeePass = password
+    const newEmployeeTask = { active: false, newTask: false, completed: false, failed: false, title, date, category, description, }
+
+
+    const employeeCreator = (e) => {
         e.preventDefault()
 
-        const newTask = { active: false, newTask: true, completed: false, failed: false, title, date, category, description, }
+        id += 1
 
-        const data = JSON.parse(localStorage.getItem('employees'))
+        let newUser = {
+            id: id,
+            email: newEmployeeEmail,
+            name: newEmployeeName,
+            password: newEmployeePass,
+            taskStats: {
+                active: 0,
+                completed: 0,
+                failed: 0,
+                newTask: 0
+            },
+            tasks: [newEmployeeTask]
+
+        }
+
+        data.push(newUser)
+
+
+        localStorage.setItem("employees", JSON.stringify(data))
+
+        setName("")
+        setEmail("")
+        setPassword("")
+
+    }
+
+
+    const taskCreator = (e) => {
+        e.preventDefault()
 
         data.forEach(elem => {
+            console.log(elem);
+
             if (assignTo == elem.name) {
                 elem.tasks.push(newTask)
                 console.log(elem);
@@ -48,17 +87,14 @@ const CreateTask = () => {
         setDescription("")
 
 
-        setName("")
-        setEmail("")
-        setPassword("")
+
+
     }
-
-
 
     return (
         <div className='w-full flex-wrap items-center justify-center flex gap-4 py-2 px-6'>
             <div className='w-[49%] shrink-0'>
-                <form onSubmit={(e) => { submitHandler(e) }} className='flex gap-4 flex-wrap py-4 px-6 shadow-[0px_10px_12px_gray] rounded-2xl items-start justify-between border-t-2 border-amber-500'>
+                <form onSubmit={(e) => { taskCreator(e) }} className='flex gap-4 flex-wrap py-4 px-6 shadow-[0px_10px_12px_gray] rounded-2xl items-start justify-between border-t-2 border-amber-500'>
                     <div className='flex flex-col gap-3'>
                         <h3>Task Title</h3>
                         <input
@@ -100,7 +136,7 @@ const CreateTask = () => {
                 </form>
             </div>
             <div className='w-[49%] shrink-0'>
-                <form onSubmit={(e) => { submitHandler(e) }} className='py-4 px-6 shadow-[0px_10px_12px_gray] rounded-2xl border-t-2 border-amber-500'>
+                <form onSubmit={(e) => { employeeCreator(e) }} className='py-4 px-6 shadow-[0px_10px_12px_gray] rounded-2xl border-t-2 border-amber-500'>
                     <div className='flex flex-col gap-3'>
                         <h3>Employee Name</h3>
                         <input

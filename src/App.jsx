@@ -10,6 +10,9 @@ const App = () => {
   const [user, setUser] = useState(null)
   const [logginUserData, setLogginUserData] = useState(null)
 
+  const [userEmail, setUserEmail] = useState("admin@company.com")
+  const [userPassword, setUserPassword] = useState("123")
+
   const authData = useContext(AuthContext)
 
   useEffect(() => {
@@ -32,6 +35,14 @@ const App = () => {
 
 
   const loginHandler = (email, password) => {
+
+    setUserEmail(email)
+    setUserPassword(password)
+
+    console.log(userEmail, userPassword);
+
+
+
     if (authData && authData.admin.find((e) => email == e.email && password == e.password)) {
 
       const admin = authData.admin.find((e) => email == e.email && password == e.password)
@@ -57,7 +68,7 @@ const App = () => {
   return (
     <>
       {!user ? <Login loginHandler={loginHandler} /> : ""}
-      {user == "admin" ? <AdminDashboard logoutHandler={logoutHandler} data={logginUserData} /> : ""}
+      {user == "admin" ? <AdminDashboard email={userEmail} password={userPassword} loginHandler={loginHandler} logoutHandler={logoutHandler} data={logginUserData} /> : ""}
       {user == "employee" ? <EmployeeDashboard logoutHandler={logoutHandler} data={logginUserData} /> : ""}
     </>
   )

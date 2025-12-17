@@ -13,8 +13,8 @@ const ActiveTask = ({data}) => {
                 <p className='text-[12px] font-medium'>{data.description}</p>
             </div>
             <div className='flex gap-1 mt-6'>
-                <button className='bg-green-600 py-1 px-1.5 whitespace-nowrap text-[13px] font-bold  rounded cursor-pointer active:scale-95'>Mark as Completed</button>
-                <button className='bg-red-600 py-1 px-1.5 whitespace-nowrap text-[13px] font-bold  rounded cursor-pointer active:scale-95'>Mark as Failed</button>
+                <button className='bg-green-600 py-1 px-1.5 text-[13px] font-bold  rounded cursor-pointer active:scale-95'>Mark Completed</button>
+                <button className='bg-red-600 py-1 px-1.5 text-[13px] font-bold  rounded cursor-pointer active:scale-95'>Mark Failed</button>
             </div>
         </div>
     )

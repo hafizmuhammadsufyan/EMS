@@ -2,7 +2,7 @@ import React from 'react'
 
 const NewTask = ({data}) => {
     return (
-        <div className='w-[20vw] flex flex-col justify-between bg-yellow-400 shrink-0 rounded-xl pt-4 pb-8 px-3 '>
+        <div className='w-[20vw] flex flex-col justify-between bg-yellow-500 shrink-0 rounded-xl pt-4 pb-8 px-3 '>
             <div className='flex justify-between items-center'>
                 <p className='text-xs font-medium bg-transparent shadow-[inset_2px_2px_4px_rgba(0,0,0,0.25)] py-1 px-2 rounded-full'>{data.category}</p>
                 <p className='text-[10px] font-light'>{data.date}</p>

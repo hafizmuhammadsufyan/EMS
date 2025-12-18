@@ -4,7 +4,7 @@ import { AuthContext } from '../../../context/AuthProvider'
 const EmployeeOverview = ({ loginHandler }) => {
 
 
-    const { employees } = useContext(AuthContext)
+    const { userData } = useContext(AuthContext)
 
 
     return (
@@ -13,14 +13,14 @@ const EmployeeOverview = ({ loginHandler }) => {
                 <div className='flex w-full text-center bg-amber-500 text-white font-bold mb-2 py-2 px-6'>
                     <h1 className='w-1/6'>Name</h1>
                     <h1 className='w-1/6'>Active Tasks</h1>
-                    <h1 className='w-1/6'>New Tasks</h1>
+                    <h1 className='w-1/6'>Pending Tasks</h1>
                     <h1 className='w-1/6'>Completed Tasks</h1>
                     <h1 className='w-1/6'>Failed Tasks</h1>
                     <h1 className='w-1/6'>See Profile</h1>
                 </div>
             </div>
             <div className='px-6'>
-                {employees.map((elem, idx) => {
+                {userData.employees.map((elem, idx) => {
                     return (
 
                         <div key={idx}>

@@ -10,7 +10,7 @@ const App = () => {
   const [user, setUser] = useState(null)
   const [logginUserData, setLogginUserData] = useState(null)
 
-  const authData = useContext(AuthContext)
+  const { userData, refresh } = useContext(AuthContext)
 
   useEffect(() => {
     const loggedinUser = JSON.parse(localStorage.getItem('loggedinUser'))
@@ -21,7 +21,8 @@ const App = () => {
 
     }
 
-  }, [])
+  }, [refresh])
+  
 
   const logoutHandler = () => {
 
@@ -33,20 +34,17 @@ const App = () => {
 
   const loginHandler = (email, password) => {
 
-    
+    if (userData && userData.admin.find((e) => email == e.email && password == e.password)) {
 
-
-    if (authData && authData.admin.find((e) => email == e.email && password == e.password)) {
-
-      const admin = authData.admin.find((e) => email == e.email && password == e.password)
+      const admin = userData.admin.find((e) => email == e.email && password == e.password)
 
       if (admin) {
         setUser("admin")
         localStorage.setItem("loggedinUser", JSON.stringify({ role: "admin", data: admin }))
         setLogginUserData(admin)
       }
-    } else if (authData && authData.employees.find((e) => email == e.email && password == e.password)) {
-      const employee = authData.employees.find((e) => email == e.email && password == e.password)
+    } else if (userData && userData.employees.find((e) => email == e.email && password == e.password)) {
+      const employee = userData.employees.find((e) => email == e.email && password == e.password)
       if (employee) {
         setUser('employee')
         localStorage.setItem("loggedinUser", JSON.stringify({ role: "employee", data: employee }))

@@ -1,6 +1,36 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AuthContext } from '../../context/AuthProvider'
 
-const NewTask = ({data}) => {
+const NewTask = ({ empData, data }) => {
+
+    const { triggerRefresh } = useContext(AuthContext)
+
+    const acceptTask = () => {
+        const prevData = JSON.parse(localStorage.getItem('employees'))
+
+
+
+        prevData.forEach((emp) => {
+            if (emp.id === empData.id) {
+                emp.tasks.forEach((task) => {
+                    if (task.title === data.title) {
+                        task.newTask = false
+                        task.active = true
+                        emp.taskStats.newTask -= 1
+                        emp.taskStats.active += 1
+                    }
+                })
+            }
+        })
+        localStorage.setItem('employees', JSON.stringify(prevData))
+
+        triggerRefresh()
+
+    }
+
+
+
+
     return (
         <div className='w-[20vw] flex flex-col justify-between bg-yellow-500 shrink-0 rounded-xl pt-4 pb-8 px-3 '>
             <div className='flex justify-between items-center'>
@@ -12,7 +42,7 @@ const NewTask = ({data}) => {
                 <p className='text-[12px] font-medium'>{data.description}</p>
             </div>
             <div>
-                <button className='bg-green-600 text-lg font-bold py-0.5 w-full rounded mt-6 cursor-pointer active:scale-95'>Accept</button>
+                <button onClick={() => { acceptTask() }} className='bg-green-600 text-lg font-bold py-0.5 w-full rounded mt-6 cursor-pointer active:scale-95'>Accept</button>
             </div>
         </div>
     )

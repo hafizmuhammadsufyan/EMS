@@ -6,16 +6,16 @@ const employee = [
     password: "123",
 
     taskStats: {
-      active: 1,
-      newTask: 1,
-      completed: 1,
-      failed: 1
+      newTask: 3,
+      active: 0,
+      completed: 0,
+      failed: 0
     },
 
     tasks: [
       {
-        active: true,
         newTask: true,
+        active: false,
         completed: false,
         failed: false,
         title: "Prepare Monthly Report",
@@ -24,9 +24,9 @@ const employee = [
         category: "Reporting"
       },
       {
+        newTask: true,
         active: false,
-        newTask: false,
-        completed: true,
+        completed: false,
         failed: false,
         title: "Client Follow-up",
         description: "Email client regarding contract renewal.",
@@ -34,10 +34,10 @@ const employee = [
         category: "Communication"
       },
       {
+        newTask: true,
         active: false,
-        newTask: false,
         completed: false,
-        failed: true,
+        failed: false,
         title: "Database Backup",
         description: "Backup server database before system update.",
         date: "2025-01-20",
@@ -53,16 +53,16 @@ const employee = [
     password: "123",
 
     taskStats: {
-      active: 1,
-      newTask: 1,
-      completed: 1,
+      newTask: 3,
+      active: 0,
+      completed: 0,
       failed: 0
     },
 
     tasks: [
       {
-        active: true,
         newTask: true,
+        active: false,
         completed: false,
         failed: false,
         title: "Design Landing Page",
@@ -71,9 +71,9 @@ const employee = [
         category: "Design"
       },
       {
+        newTask: true,
         active: false,
-        newTask: false,
-        completed: true,
+        completed: false,
         failed: false,
         title: "Fix Navbar Bug",
         description: "Resolve responsiveness issue in navbar.",
@@ -81,8 +81,8 @@ const employee = [
         category: "Development"
       },
       {
+        newTask: true,
         active: false,
-        newTask: false,
         completed: false,
         failed: false,
         title: "Optimize Images",
@@ -100,16 +100,16 @@ const employee = [
     password: "123",
 
     taskStats: {
-      active: 3,
-      newTask: 2,
-      completed: 1,
+      newTask: 3,
+      active: 0,
+      completed: 0,
       failed: 0
     },
 
     tasks: [
       {
-        active: true,
         newTask: true,
+        active: false,
         completed: false,
         failed: false,
         title: "Inventory Check",
@@ -118,9 +118,9 @@ const employee = [
         category: "Operations"
       },
       {
+        newTask: true,
         active: false,
-        newTask: false,
-        completed: true,
+        completed: false,
         failed: false,
         title: "Supplier Call",
         description: "Discuss delivery schedule with supplier.",
@@ -128,10 +128,10 @@ const employee = [
         category: "Procurement"
       },
       {
+        newTask: true,
         active: false,
-        newTask: false,
         completed: false,
-        failed: true,
+        failed: false,
         title: "Shipment Coordination",
         description: "Coordinate late shipment arrival.",
         date: "2025-01-22",
@@ -147,16 +147,16 @@ const employee = [
     password: "123",
 
     taskStats: {
-      active: 1,
-      newTask: 1,
-      completed: 1,
+      newTask: 3,
+      active: 0,
+      completed: 0,
       failed: 0
     },
 
     tasks: [
       {
-        active: true,
         newTask: true,
+        active: false,
         completed: false,
         failed: false,
         title: "Marketing Campaign",
@@ -165,9 +165,9 @@ const employee = [
         category: "Marketing"
       },
       {
+        newTask: true,
         active: false,
-        newTask: false,
-        completed: true,
+        completed: false,
         failed: false,
         title: "Social Media Audit",
         description: "Analyze engagement metrics.",
@@ -175,8 +175,8 @@ const employee = [
         category: "Analytics"
       },
       {
+        newTask: true,
         active: false,
-        newTask: false,
         completed: false,
         failed: false,
         title: "Ad Budget Planning",
@@ -194,16 +194,16 @@ const employee = [
     password: "123",
 
     taskStats: {
-      active: 1,
-      newTask: 1,
-      completed: 1,
-      failed: 1
+      newTask: 3,
+      active: 0,
+      completed: 0,
+      failed: 0
     },
 
     tasks: [
       {
-        active: true,
         newTask: true,
+        active: false,
         completed: false,
         failed: false,
         title: "Employee Onboarding",
@@ -212,9 +212,9 @@ const employee = [
         category: "HR"
       },
       {
+        newTask: true,
         active: false,
-        newTask: false,
-        completed: true,
+        completed: false,
         failed: false,
         title: "Policy Update Review",
         description: "Review updated company policies.",
@@ -222,10 +222,10 @@ const employee = [
         category: "Compliance"
       },
       {
+        newTask: true,
         active: false,
-        newTask: false,
         completed: false,
-        failed: true,
+        failed: false,
         title: "Attendance Audit",
         description: "Audit attendance records for errors.",
         date: "2025-01-23",

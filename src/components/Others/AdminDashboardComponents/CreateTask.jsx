@@ -19,30 +19,24 @@ const CreateTask = () => {
     const newTask = { active: false, newTask: true, completed: false, failed: false, title, date, category, description, }
 
 
-    let id = 5
-    let newEmployeeName = name
-    let newEmployeeEmail = email
-    let newEmployeePass = password
-    const newEmployeeTask = { active: false, newTask: false, completed: false, failed: false, title, date, category, description, }
-
+    let id = data.length
 
     const employeeCreator = (e) => {
-        e.preventDefault()
 
         id += 1
 
         let newUser = {
             id: id,
-            email: newEmployeeEmail,
-            name: newEmployeeName,
-            password: newEmployeePass,
+            email,
+            name,
+            password,
             taskStats: {
                 active: 0,
                 completed: 0,
                 failed: 0,
                 newTask: 0
             },
-            tasks: [newEmployeeTask]
+            tasks: []
 
         }
 
@@ -59,35 +53,26 @@ const CreateTask = () => {
 
 
     const taskCreator = (e) => {
-        e.preventDefault()
 
         data.forEach(elem => {
-            console.log(elem);
 
             if (assignTo == elem.name) {
                 elem.tasks.push(newTask)
-                console.log(elem);
-
+                elem.taskStats.newTask += 1
 
             }
 
 
         });
 
+
         localStorage.setItem("employees", JSON.stringify(data))
-
-
-
-
 
         setTitle("")
         setDate("")
         setAssignTo("")
         setCategory("")
         setDescription("")
-
-
-
 
     }
 

@@ -7,7 +7,7 @@ import FailedTask from '../../TaskList/FailedTask'
 import NewTask from '../../TaskList/NewTask'
 import Filters from './Filters'
 
-const TaskListCards = ({ data }) => {
+const TaskListCards = ({setLoginUser, data }) => {
 
     const [active, setActive] = useState(true)
     const [completed, setCompleted] = useState(true)
@@ -20,8 +20,8 @@ const TaskListCards = ({ data }) => {
             <div className='py-2 px-4 flex overflow-auto gap-4 text-white'>
 
                 {data.tasks.map((elem, idx) => {
-                    if (elem.active && active) return <ActiveTask key={idx} data={elem} empData={data} />
-                    if (elem.newTask && newTask) return <NewTask key={idx} data={elem} empData={data} />
+                    if (elem.active && active) return <ActiveTask setLoginUser={setLoginUser} key={idx} data={elem} empData={data} />
+                    if (elem.newTask && newTask) return <NewTask setLoginUser={setLoginUser} key={idx} data={elem} empData={data} />
                     if (elem.completed && completed) return <CompleteTask key={idx} data={elem} empData={data} />
                     if (elem.failed && failed) return <FailedTask key={idx} data={elem} empData={data} />
                 })}

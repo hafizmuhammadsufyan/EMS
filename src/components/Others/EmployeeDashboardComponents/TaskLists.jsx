@@ -1,7 +1,7 @@
 import React from 'react'
 import TaskListCards from './TaskListCards'
 
-const TaskLists = ({data}) => {
+const TaskLists = ({setLoginUser,data}) => {
     return (
         <div className='py-2'>
             <div className='w items-center flex justify-between'>
@@ -9,7 +9,7 @@ const TaskLists = ({data}) => {
                 <p className='text-sm'>14, December 2025</p>
             </div>
             
-            <TaskListCards data={data}/>
+            <TaskListCards setLoginUser={setLoginUser} data={data}/>
         </div>
     )
 }

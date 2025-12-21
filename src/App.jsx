@@ -55,13 +55,12 @@ const App = () => {
     }
   }
 
-
   return (
-    <>
+    <div className='overflow-x-hidden'>
       {!user ? <Login loginHandler={loginHandler} /> : ""}
       {user == "admin" ? <AdminDashboard loginHandler={loginHandler} logoutHandler={logoutHandler} data={logginUserData} /> : ""}
       {user == "employee" ? <EmployeeDashboard loginHandler={loginHandler} logoutHandler={logoutHandler} data={logginUserData} setLoginUser={setLogginUserData}/> : ""}
-    </>
+    </div>
   )
 }
 

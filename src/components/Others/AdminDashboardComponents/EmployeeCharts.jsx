@@ -28,8 +28,8 @@ const EmployeeCharts = () => {
                     return (
                         <div className='mt-3 shrink-0 lg:w-[45%] w-full h-64 border-l-4 border-amber-500 rounded-xl py-2 px-4 flex justify-between shadow-xl' key={idx}>
                             <div className='w-[30%] flex flex-col items-start justify-around'>
-                                <h1 className='font-bold text-[16px] mb-2'><span className='text-amber-500 text-2xl'>{elem.name}</span>'s Task Overview</h1>
-                                <h3 className='text-[13px]'>Total Tasks Given: <span className='text-amber-500 text-xl font-bold'>{length}</span></h3>
+                                <h1 className='font-bold lg:text-[16px] text-[12px] mb-2'><span className='text-amber-500 lg:text-2xl'>{elem.name}</span>'s Task Overview</h1>
+                                <h3 className='text-[13px]'>Total Tasks Given: <span className='text-amber-500 lg:text-xl font-bold'>{length}</span></h3>
                             </div>
                             <div className='w-[70%]'>
                                 <PolarArea

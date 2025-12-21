@@ -10,7 +10,7 @@ const EmployeeOverview = ({ loginHandler }) => {
     return (
         <div>
             <div className=' mt-7 px-6'>
-                <div className='flex w-full text-center bg-amber-500 text-white font-bold mb-2 py-2 px-6'>
+                <div className='flex w-full lg:text-lg md:text-lg text-[6px] text-center bg-amber-500 text-white font-bold mb-2 py-2 px-6'>
                     <h1 className='w-1/6'>Name</h1>
                     <h1 className='w-1/6'>Active Tasks</h1>
                     <h1 className='w-1/6'>Pending Tasks</h1>
@@ -24,7 +24,7 @@ const EmployeeOverview = ({ loginHandler }) => {
                     return (
 
                         <div key={idx}>
-                            <div className='flex text-lg font-bold text-center w-full border-b border-b-amber-500 mb-2 py-3 px-6'>
+                            <div className='flex lg:text-lg md-text-lg text-xs font-bold text-center w-full border-b border-b-amber-500 mb-2 py-3 px-6'>
                                 <h1 className='w-1/6'>{elem.name}</h1>
                                 <h1 className='w-1/6 text-blue-600'>{elem.taskStats.active}</h1>
                                 <h1 className='w-1/6 text-yellow-400'>{elem.taskStats.newTask}</h1>

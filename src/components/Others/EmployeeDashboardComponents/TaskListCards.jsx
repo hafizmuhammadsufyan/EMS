@@ -17,7 +17,7 @@ const TaskListCards = ({setLoginUser, data }) => {
     return (
         <div>
             <Filters setActive={setActive} setCompleted={setCompleted} setNewTask={setNewTask} setFailed={setFailed}/>
-            <div className='py-2 px-4 flex overflow-auto gap-4 text-white'>
+            <div className='py-2 px-4 flex lg:flex-nowrap flex-wrap lg:overflow-auto gap-4 text-white'>
 
                 {data.tasks.map((elem, idx) => {
                     if (elem.active && active) return <ActiveTask setLoginUser={setLoginUser} key={idx} data={elem} empData={data} />

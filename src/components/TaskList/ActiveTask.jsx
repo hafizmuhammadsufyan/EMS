@@ -17,7 +17,10 @@ const ActiveTask = ({ setLoginUser, empData, data }) => {
                         task.active = false
                         task.newTask = false
                         task.completed = true
-                        emp.taskStats.active -= 1
+                        if (emp.taskStats.active > 0) {
+
+                            emp.taskStats.active -= 1
+                        }
                         emp.taskStats.completed += 1
                     }
                     setLoginUser(emp)
@@ -28,8 +31,6 @@ const ActiveTask = ({ setLoginUser, empData, data }) => {
             }
         })
         localStorage.setItem('employees', JSON.stringify(prevData))
-
-        // triggerRefresh()
 
 
     }
@@ -44,7 +45,10 @@ const ActiveTask = ({ setLoginUser, empData, data }) => {
                         task.active = false
                         task.newTask = false
                         task.failed = true
-                        emp.taskStats.active -= 1
+                        if (emp.taskStats.active > 0) {
+
+                            emp.taskStats.active -= 1
+                        }
                         emp.taskStats.failed += 1
                     }
 
@@ -61,7 +65,7 @@ const ActiveTask = ({ setLoginUser, empData, data }) => {
     }
 
     return (
-        <div className='w-[20vw] flex flex-col justify-between bg-blue-400 shrink-0 rounded-xl pt-4 pb-8 px-3 '>
+        <div className='lg:w-[20vw] w-full flex flex-col justify-between bg-blue-400 shrink-0 rounded-xl pt-4 pb-8 px-3 '>
             <div className='flex justify-between items-center'>
                 <p className='text-xs font-medium bg-transparent shadow-[inset_2px_2px_4px_rgba(0,0,0,0.25)] py-1 px-2 rounded-full'>{data.category}</p>
                 <p className='text-[10px] font-medium'>{data.date}</p>

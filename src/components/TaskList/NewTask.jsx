@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { AuthContext } from '../../context/AuthProvider'
 
-const NewTask = ({setLoginUser, empData, data }) => {
+const NewTask = ({ setLoginUser, empData, data }) => {
 
     const { triggerRefresh } = useContext(AuthContext)
 
@@ -16,7 +16,10 @@ const NewTask = ({setLoginUser, empData, data }) => {
                     if (task.title === data.title) {
                         task.newTask = false
                         task.active = true
-                        emp.taskStats.newTask -= 1
+                        if (emp.taskStats.newTask > 0) {
+
+                            emp.taskStats.newTask -= 1
+                        }
                         emp.taskStats.active += 1
                     }
                     setLoginUser(emp)
@@ -35,7 +38,7 @@ const NewTask = ({setLoginUser, empData, data }) => {
 
 
     return (
-        <div className='w-[20vw] flex flex-col justify-between bg-yellow-500 shrink-0 rounded-xl pt-4 pb-8 px-3 '>
+        <div className='lg:w-[20vw] w-full flex flex-col justify-between bg-yellow-500 shrink-0 rounded-xl pt-4 pb-8 px-3 '>
             <div className='flex justify-between items-center'>
                 <p className='text-xs font-medium bg-transparent shadow-[inset_2px_2px_4px_rgba(0,0,0,0.25)] py-1 px-2 rounded-full'>{data.category}</p>
                 <p className='text-[10px] font-medium'>{data.date}</p>

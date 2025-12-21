@@ -2,7 +2,7 @@ import React from 'react'
 
 const Filters = ({ setActive, setCompleted, setNewTask, setFailed }) => {
     return (
-        <div className='flex gap-4 my-2 px-6 py-2'>
+        <div className='flex lg:flex-nowrap flex-wrap gap-4 my-2 px-6 py-2'>
             <button
                 onClick={() => {
                     setActive(false)

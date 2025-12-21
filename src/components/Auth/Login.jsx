@@ -16,15 +16,15 @@ const Login = ({loginHandler}) => {
 
 
     return (
-        <div className='h-screen w-screen flex items-center justify-center'>
-            <div className='w-[50vw] p-6 h-full flex flex-col items-center justify-between'>
+        <div className='h-screen w-screen flex lg:flex-row flex-col lg:gap-0 gap-20 lg:items-center lg:justify-center'>
+            <div className='lg:w-[50vw] w-full p-6 h-full flex flex-col items-center justify-between'>
                 <div>
                     <h1 className='text-4xl mb-8 font-semibold text-amber-500'>EMS</h1>
                 </div>
                 <div className='h-20 w-20 mb-8'>
                     <img className='rounded-full h-20 w-20' src="./ceo.jpg" alt="" />
                 </div>
-                <div className='flex w-100 mb-5 justify-between'>
+                <div className='flex w-100 mb-5 lg:justify-between justify-around'>
                     <h2 className='text-2xl font-normal border-b-4 border-b-amber-500'>Sign In</h2>
                     <div className='flex gap-3 items-center justify-center'>
                         <p className='text-sm text-gray-400'>Login as:</p>
@@ -69,7 +69,7 @@ const Login = ({loginHandler}) => {
                 </form>
 
             </div>
-            <div className='w-[50vw] h-full'>
+            <div className='lg:w-[50vw] w-full h-full'>
                 <img className='object-cover h-full w-full' src="./loginPageImg.webp" alt="" />
             </div>
         </div>
